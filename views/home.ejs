@@ -1,10 +1,41 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do HomePage</title>
+
+    <!-- Font Awasome CDN -->
+    <script src="https://kit.fontawesome.com/27da04ddc2.js" crossorigin="anonymous"></script>
+    <!-- StyleSheet link -->
+    <link rel="stylesheet" href="../assets/css/home.css" type="text/css">
 </head>
+
 <body>
-    <h1>Swagat hai Apka</h1>
+    <main>
+        <div id="totalcount">
+            <h2>Total To-Do's Count : <span id="count">0</span></h2>
+        </div>
+        <div id="input">
+            <input type="text" placeholder="add a To-Do here">
+        </div>
+        <ul id="tasklist">
+            <!-- <li>
+                <input type="checkbox" id="task1" data-id="12" class="custom-checkbox">
+                <label for="task1">Buy groceries</label>
+                <i class="fa-solid fa-trash-can" data-id="12"></i>
+            </li>
+            <li>
+                <input type="checkbox" id="task2" data-id="12" class="custom-checkbox">
+                <label for="task2">Buy groceries</label>
+                <i class="fa-solid fa-trash-can"></i>
+            </li> -->
+        </ul>
+    </main>
+
+
+    <!-- Linked Javascript -->
+    <script type="text/javascript" src="js/home.js"></script>
 </body>
+
 </html>
