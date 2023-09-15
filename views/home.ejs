@@ -8,7 +8,7 @@
     <!-- Font Awasome CDN -->
     <script src="https://kit.fontawesome.com/27da04ddc2.js" crossorigin="anonymous"></script>
     <!-- StyleSheet link -->
-    <link rel="stylesheet" href="../assets/css/home.css" type="text/css">
+    <link rel="stylesheet" href="/css/home.css" type="text/css">
 </head>
 
 <body>
@@ -16,26 +16,42 @@
         <div id="totalcount">
             <h2>Total To-Do's Count : <span id="count">0</span></h2>
         </div>
-        <div id="input">
-            <input type="text" placeholder="add a To-Do here">
-        </div>
+        <form action="/add_todo" method="post">
+            <div id="input">
+                <input type="text" placeholder="Add description for To-Do here" name="desc" required>
+            </div>
+            <div id="input2">
+                <label for="category"><b>Category:</b></label>
+                <select name="category" id="category" required>
+                    <option value="Personal">Personal</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Important">Important</option>
+                    <option value="Other">Other</option>
+                </select>
+                <label for="todoDate"><b>Due Date:</b></label>
+                <input type="date" id="todoDate" name="date">
+            </div>
+            <button type="submit" id="addTodo">Add &nbsp; ToDo</button>
+        </form>
         <ul id="tasklist">
-            <!-- <li>
-                <input type="checkbox" id="task1" data-id="12" class="custom-checkbox">
-                <label for="task1">Buy groceries</label>
-                <i class="fa-solid fa-trash-can" data-id="12"></i>
-            </li>
-            <li>
-                <input type="checkbox" id="task2" data-id="12" class="custom-checkbox">
-                <label for="task2">Buy groceries</label>
-                <i class="fa-solid fa-trash-can"></i>
-            </li> -->
+            <% for(var i of ToDos) { %>
+                <li>
+                    <input type="checkbox" id="<%= i.id %>" data-id="12" class="custom-checkbox">
+                    <label for="<%= i.id %>">
+                        <%= i.desc %>
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<%= i.category %>) - <%= i.date.toISOString().slice(0,10) %>
+                    </label>
+                    <i class="fa-solid fa-trash-can" data-id="12"></i>
+                </li>
+                <% } %>
         </ul>
     </main>
 
 
     <!-- Linked Javascript -->
-    <script type="text/javascript" src="js/home.js"></script>
+    <script type="text/javascript" src="/js/home.js">
+    </script>
 </body>
 
 </html>
