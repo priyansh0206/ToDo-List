@@ -1,0 +1,17 @@
+{
+  "name": "to_do_lists",
+  "version": "1.0.0",
+  "description": "A Application to keeps TO_DO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Priyansh Developer",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "git": "^0.1.5",
+    "mongoose": "^7.5.1"
+  }
+}
