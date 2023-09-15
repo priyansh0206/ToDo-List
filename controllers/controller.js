@@ -1,5 +1,5 @@
 module.exports.home = function(req, res){
-    res.end("<h1>Hi There welcome on Home Page !</h1>");
+    res.render('home');
 }
 
 module.exports.about = function(req, res){
