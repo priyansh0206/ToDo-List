@@ -3,6 +3,8 @@ const port = 8000;
 
 const app = express();
 
+app.use('/', require('./routes/routesIndex'));
+
 app.listen(port, function(err){
     if(err){
         console.log("Error is :");
