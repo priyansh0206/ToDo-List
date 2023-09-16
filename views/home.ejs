@@ -14,7 +14,7 @@
 <body>
     <main>
         <div id="totalcount">
-            <h2>Total To-Do's Count : <span id="count">0</span></h2>
+            <h2>Total To-Do's Count : <span id="count"><%= count %></span></h2>
         </div>
         <form action="/add_todo" method="post">
             <div id="input">
@@ -40,9 +40,14 @@
                     <label for="<%= i.id %>">
                         <%= i.desc %>
                             <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<%= i.category %>) - <%= i.date.toISOString().slice(0,10) %>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<%= i.category %>) - 
+                            <% if (i.date !== null){ %>
+                            <%= i.date.toISOString().slice(0,10); %>
+                            <% } %>
                     </label>
-                    <i class="fa-solid fa-trash-can" data-id="12"></i>
+                    <a href="/delete_todo/?id=<%= i.id %>">
+                        <i class="fa-solid fa-trash-can" data-id="12"></i>
+                    </a>
                 </li>
                 <% } %>
         </ul>
