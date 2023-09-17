@@ -9,12 +9,50 @@
     <script src="https://kit.fontawesome.com/27da04ddc2.js" crossorigin="anonymous"></script>
     <!-- StyleSheet link -->
     <link rel="stylesheet" href="/css/home.css" type="text/css">
+    <style>
+        @media (max-width: 1100px) and  (min-width: 800px){
+            #totalcount {
+                width: 70%;
+            }
+
+            form {
+                width: 70%;
+            }
+
+            #addTodo {
+                width: 40%;
+            }
+
+            ul {
+                width: 60%;
+            }
+        }
+        @media (max-width: 800px) {
+            #totalcount {
+                width: 90%;
+            }
+
+            form {
+                width: 99%;
+            }
+
+            #addTodo {
+                width: 50%;
+            }
+
+            ul {
+                width: 70%;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <main>
         <div id="totalcount">
-            <h2>Total To-Do's Count : <span id="count"><%= count %></span></h2>
+            <h2>Total To-Do's Count : <span id="count">
+                    <%= count %>
+                </span></h2>
         </div>
         <form action="/add_todo" method="post">
             <div id="input">
@@ -35,20 +73,22 @@
         </form>
         <ul id="tasklist">
             <% for(var i of ToDos) { %>
-                <li>
-                    <input type="checkbox" id="<%= i.id %>" data-id="12" class="custom-checkbox">
-                    <label for="<%= i.id %>">
-                        <%= i.desc %>
-                            <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<%= i.category %>) - 
-                            <% if (i.date !== null){ %>
-                            <%= i.date.toISOString().slice(0,10); %>
-                            <% } %>
-                    </label>
+                <div id="listContainer">
+                    <li>
+                        <input type="checkbox" id="<%= i.id %>" data-id="12" class="custom-checkbox">
+                        <label for="<%= i.id %>">
+                            <%= i.desc %>
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<%= i.category %>) -
+                                    <% if (i.date !==null){ %>
+                                        <%= i.date.toISOString().slice(0,10); %>
+                                            <% } %>
+                        </label>
+                    </li>
                     <a href="/delete_todo/?id=<%= i.id %>" class="redColour">
                         <i class="fa-solid fa-trash-can" data-id="12"></i>
                     </a>
-                </li>
+                </div>
                 <% } %>
         </ul>
     </main>

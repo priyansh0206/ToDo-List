@@ -15,6 +15,7 @@ main{
     justify-content: start;
     overflow: auto;
     position: relative;
+    /* border: 5px solid red; */
 }
 
 #totalcount{
@@ -23,6 +24,7 @@ main{
     align-items: center;
     height: 10%;
     width: 50%;
+    /* border: 5px solid red; */
 }
 
 form{
@@ -106,11 +108,18 @@ ul{
     padding: 0;
 }
 
-ul li{
-    margin: 1.5rem 0rem;
+#listContainer{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* border: 5px solid red; */
+}
+
+ul li{
+    margin: 1.5rem 0rem;
+    width: 90%;
+    white-space: normal;
+    overflow: auto;
 }
 
 #tasklist li input {

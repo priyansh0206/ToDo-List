@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/ToDoDB');
+mongoose.connect('mongodb+srv://priyanshadmin:admin@clustermain.vvg6gyt.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp');
 
 const db = mongoose.connection;
 
